@@ -14,16 +14,20 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: _color,
-      body: Center(
-        child: TextButton(
-          onPressed: _generateColor,
-          child: const Text(
-            'Hey There',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
+      body: AnimatedContainer(
+        duration: const Duration(seconds: 2),
+        curve: Curves.linear,
+        color: _color,
+        child: Center(
+          child: TextButton(
+            onPressed: _generateColor,
+            child: const Text(
+              'Hey There',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
         ),
